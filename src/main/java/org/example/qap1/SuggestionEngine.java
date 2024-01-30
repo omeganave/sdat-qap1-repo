@@ -98,9 +98,7 @@ public class SuggestionEngine {
         }
 
         SuggestionEngine suggestionEngine = new SuggestionEngine();
-//        System.out.println("Suggestion Engine created");
         suggestionEngine.loadDictionaryData(Paths.get( ClassLoader.getSystemResource("words.txt").getPath()));
-//        System.out.println("Got dictionary data");
         System.out.println(suggestionEngine.generateSuggestions(args[0]));
     }
 }
