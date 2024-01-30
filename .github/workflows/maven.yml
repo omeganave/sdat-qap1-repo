@@ -28,10 +28,10 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B package --file pom.xml 2>&1 | tee build.log
 
-    - name: Show test output
-      run: cat /home/runner/work/sdat-qap1-repo/sdat-qap1-repo/target/surefire-reports/*.txt
+    - name: Show Maven Build Logs
+      run: cat build.log
 
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
